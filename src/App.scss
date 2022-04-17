@@ -1,0 +1,116 @@
+*{
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.loader{
+  width: 50px;
+  height: 50px;
+  margin-left: 90%;
+ display: inline-block;
+  
+  
+}
+.auth{
+  width: 400px;
+  height: 200px;
+  border: 2px solid gray;
+ border-radius: 10px;
+ margin-top:200px;
+ .emailField{
+   margin-left: 20%;
+   margin-top: 30px;
+ }
+ .passwordField{
+   margin-left: 15%;
+   margin-top: 15px;
+ }
+ >button{
+   width: 70px;
+   height: 35px;
+   margin-top: 50px;
+   border: 2px solid gray;
+   margin-left: 90px;
+   background-color: white;
+   &:hover{
+     background-color: gray;
+   }
+ }
+}
+nav{  
+  >a{
+  color: rgb(31, 25, 25);
+  text-decoration: none;
+  padding: 10px 10px;
+  border: 2px solid gray;
+  }
+}
+.wrapper__basket{
+  >.basket{
+position: relative;
+top: 15px;
+  height: 40px;
+  }
+}
+.custom-components {
+margin-top: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  border: 2px solid gray;
+  >div{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+     >:not(:first-child){
+       &:hover{
+        background-color: gray;
+       }
+      border: 1px solid gray;
+      margin-left: 5px;
+      font-size: 15px;
+     }
+    >*{
+      display: inline-block;
+    }
+  }
+}
+button:hover{
+  cursor: pointer;
+}
+.example-field {
+  min-width: 200px;
+  min-height: 200px;
+  border: 2px solid gray;
+  >li{
+  >button{
+    background: transparent;
+    border: 1px solid gray;
+    &:hover{
+  background-color: gray;
+}
+  }
+}
+  button{
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+.modalAddRule {
+  min-width: 300px;
+  min-height: 100px;
+  border: 2px solid red;
+  position: absolute;
+  background-color: gray;
+  top: 300px;
+  left: 600px;
+  input {
+    width: 200px;
+  }
+  button {
+    display: block;
+    margin: 30px auto;
+  }
+  select {
+    width: 100px;
+  }
+}
