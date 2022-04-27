@@ -10,7 +10,7 @@ export const Basket = ({ contentBasket, component, setContentBasket }:PropsType 
   const handleClick = (e: React.MouseEvent) => {
     handleDeleteComponentIsBasket(e as OnClickButtonType); 
   };
-  
+ 
   return  <div className='custom-components'> 
     {contentBasket.length ? contentBasket.map((item:RuleType,index:number) => {
       return <div>
