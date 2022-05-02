@@ -1,6 +1,4 @@
 import {Basket} from "../components/Basket/Basket"
-import React from 'react'
-
 
 const contentBasket = [{
     "background-color": "green",
@@ -22,33 +20,42 @@ const contentBasket = [{
     "border-radius": "50px",
     "name": "secondary",
     "id": "95350190-d5d0-480c-8d0b-7584cd579624",
+},{
+    "background-color": "yellow",
+    "border-radius": "50px",
+    "name": "secondary",
+    "id": "95350190-d5d0-480c-8d0b-7584cd579624",
 }];
 const props = (contentBasket,component)=> ({
     contentBasket,
     component,
-    setContentBasket: ()=>{}
+    setContentBasket: ()=>{},
 })
-const setUp = (props) => shallow(<Basket {...props} />);
+const setUp = (props) => render(<Basket {...props} />);
+const setUpshallow = (props) => shallow(<Basket {...props} />);
 describe("test Basket component with props", () => {
     
-    
     it("should contain custom-components block", () => {
-       const component = setUp(props(contentBasket, "button"));
-        const customComponents = component.find(".custom-components");
-        expect(customComponents.length).toBe(1);
+       const component = setUpshallow(props(contentBasket, "button"));
+        expect(component.find(".custom-components")).toHaveLength(1);
 })
     it("check rendering dependency on empty array contentBasket in props", () => {
-        const component = setUp(props([], "button"));
+        const component = setUp(props([], "input"));
         const textComponent = component.find("p");
-        const customComponent = component.find("button");
-        expect(textComponent.length).toBe(1);
+        const customComponent = component.find("input");
+        expect(textComponent.length).toEqual(1);
         expect(customComponent.length).toEqual(0);
     });
-     it("check rendering dependency on array contentBasket in props", () => {
-       const component = setUp(props(contentBasket, "button"));
+    it("check rendering dependency on array contentBasket in props and component", () => {
+        const component = setUp(props(contentBasket, "a"));
         const textComponent = component.find("p");
-        const customComponent = component.find("button");
+       
+        const customComponent = component.find("a");
         expect(textComponent.length).toBe(0);
-        expect(customComponent.length).toEqual(4);
+        expect(customComponent.length).toEqual(5);
+    });
+    it("check rendering dependency on component ip props", () => {
+        const component = setUp(props(contentBasket, "input"));
+        expect(component.find("input").length).toEqual(5);
     })
 })

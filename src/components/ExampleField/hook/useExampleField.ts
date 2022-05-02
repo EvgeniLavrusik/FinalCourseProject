@@ -6,7 +6,6 @@ import { ACTION_DELETE_RULE } from "../../../ducks/rule/actions";
 import { validationComponents } from "../../../helpers/validationComponents";
 import { ACTION_POST_COMPONENT,ACTION_PATCH_COMPONENT } from "../../../ducks/listComponents/actions";
 
-
 export const useExampleField = (setIsShowModal:React.Dispatch<React.SetStateAction<boolean>> ,component:string):ReturnTypeUseExampleField => {
     const dispatch = useDispatch();
     const dataRule:RuleType = useSelector(ruleSelectors);
@@ -27,8 +26,6 @@ export const useExampleField = (setIsShowModal:React.Dispatch<React.SetStateActi
         }
     };
     const handleClickSubmit = (): void => {
-        console.log(dataRule);
-        
         dispatch(ACTION_POST_COMPONENT(validationComponents(component), dataRule));
     };
     const handleClickApplyEdit = (): void => {
